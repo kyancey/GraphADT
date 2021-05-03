@@ -24,4 +24,4 @@ if __name__ == "__main__":
     g.add_undirected_edge(vertex_f, vertex_e)
 
     print(g["B"])
-    pass
+    print(g.get_adjacent(g["A"]))

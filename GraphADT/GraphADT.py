@@ -4,6 +4,9 @@ class Vertex:
     def __init__(self, label):
         self.label = label
 
+    def __repr__(self):
+        return "Vertex: " + self.label
+
 
 
 class GraphADT:
@@ -21,6 +24,9 @@ class GraphADT:
     def add_undirected_edge(self, vertex_a, vertex_b, weight=1.0):
         self.add_directed_edge(vertex_a, vertex_b, weight)
         self.add_directed_edge(vertex_b, vertex_a, weight)
+
+    def get_adjacent(self, vertex):
+        return [(v, self.edge_weights[(vertex, v)]) for v in self.adjacency_list[vertex]]
 
     def __getitem__(self, label):
         for vertex in self.adjacency_list:
